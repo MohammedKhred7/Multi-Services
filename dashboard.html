@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - خدماتي</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-cogs"></i> لوحة التحكم</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#" class="nav-item active" data-tab="statistics"><i class="fas fa-chart-bar"></i> الإحصائيات</a></li>
+                    <li><a href="#" class="nav-item" data-tab="providers"><i class="fas fa-users"></i> إدارة مقدمي الخدمات</a></li>
+                    <li><a href="#" class="nav-item" data-tab="services"><i class="fas fa-concierge-bell"></i> إدارة الخدمات</a></li>
+                    <li><a href="#" class="nav-item" data-tab="ads"><i class="fas fa-ad"></i> إدارة الإعلانات</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="index.html" class="btn btn-secondary"><i class="fas fa-home"></i> العودة للموقع</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <h1>مرحباً بك في لوحة التحكم</h1>
+                <div class="user-info">
+                    <span>مدير النظام</span>
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Statistics Tab -->
+            <section class="tab-content active" id="statistics-tab">
+                <h2>الإحصائيات</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="providers-count">0</h3>
+                            <p>مقدمو الخدمات</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-concierge-bell"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="services-count">0</h3>
+                            <p>الخدمات المتاحة</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-ad"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="ads-count">0</h3>
+                            <p>الإعلانات النشطة</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="visitors-count">0</h3>
+                            <p>عدد الزوار</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="charts-section">
+                    <div class="chart-card">
+                        <h3>توزيع مقدمي الخدمات حسب التخصص</h3>
+                        <canvas id="providersChart"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h3>الإعلانات النشطة</h3>
+                        <canvas id="adsChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Providers Management Tab -->
+            <section class="tab-content" id="providers-tab">
+                <div class="tab-header">
+                    <h2>إدارة مقدمي الخدمات</h2>
+                    <button class="btn btn-primary" id="add-provider-btn"><i class="fas fa-plus"></i> إضافة مقدم خدمة</button>
+                </div>
+                
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>الاسم</th>
+                                <th>الخدمة</th>
+                                <th>الهاتف</th>
+                                <th>العنوان</th>
+                                <th>الفئة</th>
+                                <th>الإجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="providers-table-body">
+                            <!-- Providers table rows will be dynamically loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Services Management Tab -->
+            <section class="tab-content" id="services-tab">
+                <div class="tab-header">
+                    <h2>إدارة الخدمات</h2>
+                    <button class="btn btn-primary" id="add-service-btn"><i class="fas fa-plus"></i> إضافة خدمة</button>
+                </div>
+                
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>اسم الخدمة</th>
+                                <th>الفئة</th>
+                                <th>عدد مقدمي الخدمة</th>
+                                <th>الإجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="services-table-body">
+                            <!-- Services table rows will be dynamically loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Ads Management Tab -->
+            <section class="tab-content" id="ads-tab">
+                <div class="tab-header">
+                    <h2>إدارة الإعلانات</h2>
+                    <button class="btn btn-primary" id="add-ad-btn"><i class="fas fa-plus"></i> إضافة إعلان</button>
+                </div>
+                
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>عنوان الإعلان</th>
+                                <th>الصورة</th>
+                                <th>الوصف</th>
+                                <th>تاريخ البدء</th>
+                                <th>تاريخ الانتهاء</th>
+                                <th>الإجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ads-table-body">
+                            <!-- Ads table rows will be dynamically loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Provider Modal -->
+    <div class="modal" id="provider-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="provider-modal-title">إضافة مقدم خدمة</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <form id="provider-form">
+                <input type="hidden" id="provider-id">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="provider-name">الاسم</label>
+                        <input type="text" class="form-input" id="provider-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="provider-service">الخدمة</label>
+                        <input type="text" class="form-input" id="provider-service" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="provider-phone">الهاتف</label>
+                        <input type="tel" class="form-input" id="provider-phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="provider-category">الفئة</label>
+                        <select class="form-input" id="provider-category" required>
+                            <option value="home">خدمات المنازل</option>
+                            <option value="beauty">التجميل</option>
+                            <option value="education">التعليم</option>
+                            <option value="car">خدمات السيارات</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="provider-address">العنوان</label>
+                    <input type="text" class="form-input" id="provider-address" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="provider-description">الوصف</label>
+                    <textarea class="form-input" id="provider-description" rows="3" required></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancel-provider">إلغاء</button>
+                    <button type="submit" class="btn btn-primary">حفظ</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Service Modal -->
+    <div class="modal" id="service-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="service-modal-title">إضافة خدمة</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <form id="service-form">
+                <input type="hidden" id="service-id">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="service-name">اسم الخدمة</label>
+                        <input type="text" class="form-input" id="service-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="service-category">الفئة</label>
+                        <select class="form-input" id="service-category" required>
+                            <option value="home">خدمات المنازل</option>
+                            <option value="beauty">التجميل</option>
+                            <option value="education">التعليم</option>
+                            <option value="car">خدمات السيارات</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancel-service">إلغاء</button>
+                    <button type="submit" class="btn btn-primary">حفظ</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Ad Modal -->
+    <div class="modal" id="ad-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="ad-modal-title">إضافة إعلان</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <form id="ad-form">
+                <input type="hidden" id="ad-id">
+                <div class="form-group">
+                    <label class="form-label" for="ad-title">عنوان الإعلان</label>
+                    <input type="text" class="form-input" id="ad-title" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="ad-image">رابط الصورة</label>
+                    <input type="url" class="form-input" id="ad-image" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="ad-description">وصف الإعلان</label>
+                    <textarea class="form-input" id="ad-description" rows="3" required></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="ad-start-date">تاريخ البدء</label>
+                        <input type="date" class="form-input" id="ad-start-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="ad-end-date">تاريخ الانتهاء</label>
+                        <input type="date" class="form-input" id="ad-end-date" required>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancel-ad">إلغاء</button>
+                    <button type="submit" class="btn btn-primary">حفظ</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
