@@ -16,11 +16,12 @@
                 <a href="#" class="logo">خدماتي</a>
                 <ul class="nav-links">
                     <li><a href="#">الرئيسية</a></li>
-                    <li><a href="#categories">الفئات</a></li>
                     <li><a href="#services">الخدمات</a></li>
                     <li><a href="#ads">الإعلانات</a></li>
                     <li><a href="#contact">اتصل بنا</a></li>
                     <li><a href="#" id="login-link">تسجيل الدخول</a></li>
+
+                    <!-- <li><a href="dashboard.html" id="dashboard-link">لوحة التحكم</a></li> -->
                 </ul>
                 <div class="hamburger">
                     <i class="fas fa-bars"></i>
@@ -34,17 +35,7 @@
         <div class="container">
             <h1>نوصلك بأفضل مقدمي الخدمات في منطقتك!</h1>
             <p>اكتشف مجموعة واسعة من الخدمات المحترفة من كهرباء وسباكة وتدريس وغيرها الكثير</p>
-            <button class="cta-button" onclick="scrollToCategories()">اكتشف الخدمات الآن</button>
-        </div>
-    </section>
-
-    <!-- Categories Section -->
-    <section class="categories-section" id="categories">
-        <div class="container">
-            <h2 class="section-title">فئات الخدمات</h2>
-            <div  class="services-grid" id="categories-container">
-                <!-- Categories will be loaded here dynamically -->
-            </div>
+            <button class="cta-button" onclick="scrollToServices()">اكتشف الخدمات الآن</button>
         </div>
     </section>
 
@@ -119,7 +110,6 @@
                     <h3>روابط سريعة</h3>
                     <ul class="footer-links">
                         <li><a href="#">الرئيسية</a></li>
-                        <li><a href="#categories">الفئات</a></li>
                         <li><a href="#services">الخدمات</a></li>
                         <li><a href="#ads">الإعلانات</a></li>
                         <li><a href="#">الأسئلة الشائعة</a></li>
@@ -145,48 +135,26 @@
         </div>
     </footer>
 
-    <!-- Login Modal -->
-    <div class="modal" id="login-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>تسجيل الدخول</h3>
-                <span class="close-modal">&times;</span>
-            </div>
-            <form id="login-form">
-                <div class="form-group">
-                    <label class="form-label" for="email">رقم الهاتف</label>
-                    <input type="text" class="form-input" id="email" required>
+        <!-- Login Modal -->
+        <div class="modal" id="login-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>تسجيل الدخول</h3>
+                    <span class="close-modal">&times;</span>
                 </div>
-                <div class="form-group">
-                    <label class="form-label" for="password">كلمة المرور</label>
-                    <input type="password" class="form-input" id="password" required>
-                </div>
-                <button type="submit" class="login-btn" id="login-submit-btn">
-                    <span class="btn-text">تسجيل الدخول</span>
-                    <div class="btn-loading" style="display: none;">
-                        <div class="loading-spinner"></div>
-                        جاري التسجيل...
+                <form id="login-form">
+                    <div class="form-group">
+                        <label class="form-label" for="email">البريد الإلكتروني</label>
+                        <input type="email" class="form-input" id="email" required>
                     </div>
-                </button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Custom Dialog -->
-    <div class="dialog" id="custom-dialog">
-        <div class="dialog-content">
-            <div class="dialog-header">
-                <h3 id="dialog-title">العنوان</h3>
-            </div>
-            <div class="dialog-body">
-                <p id="dialog-message">الرسالة</p>
-            </div>
-            <div class="dialog-footer">
-                <button class="btn btn-primary" id="dialog-confirm-btn">موافق</button>
+                    <div class="form-group">
+                        <label class="form-label" for="password">كلمة المرور</label>
+                        <input type="password" class="form-input" id="password" required>
+                    </div>
+                    <button type="submit" class="login-btn">تسجيل الدخول</button>
+                </form>
             </div>
         </div>
-    </div>
-
     <!-- Scroll to top button -->
     <button class="scroll-top" id="scroll-top">
         <i class="fas fa-chevron-up"></i>

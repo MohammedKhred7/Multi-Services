@@ -18,14 +18,13 @@
             <nav class="sidebar-nav">
                 <ul>
                     <li><a href="#" class="nav-item active" data-tab="statistics"><i class="fas fa-chart-bar"></i> الإحصائيات</a></li>
-                    <li><a href="#" class="nav-item" data-tab="categories"><i class="fas fa-tags"></i> إدارة الفئات</a></li>
                     <li><a href="#" class="nav-item" data-tab="providers"><i class="fas fa-users"></i> إدارة مقدمي الخدمات</a></li>
                     <li><a href="#" class="nav-item" data-tab="services"><i class="fas fa-concierge-bell"></i> إدارة الخدمات</a></li>
                     <li><a href="#" class="nav-item" data-tab="ads"><i class="fas fa-ad"></i> إدارة الإعلانات</a></li>
                 </ul>
             </nav>
             <div class="sidebar-footer">
-                <!-- <a href="index.html" class="btn btn-secondary"><i class="fas fa-home"></i> العودة للموقع</a> -->
+                <a href="index.html" class="btn btn-secondary"><i class="fas fa-home"></i> العودة للموقع</a>
             </div>
         </aside>
 
@@ -45,15 +44,6 @@
             <section class="tab-content active" id="statistics-tab">
                 <h2>الإحصائيات</h2>
                 <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-tags"></i>
-                        </div>
-                        <div class="stat-info">
-                            <h3 id="categories-count">0</h3>
-                            <p>الفئات</p>
-                        </div>
-                    </div>
                     <div class="stat-card">
                         <div class="stat-icon">
                             <i class="fas fa-users"></i>
@@ -104,40 +94,11 @@
                 </div>
             </section>
 
-            <!-- Categories Management Tab -->
-            <section class="tab-content" id="categories-tab">
-                <div class="tab-header">
-                    <h2>إدارة الفئات</h2>
-                    <button class="btn btn-primary" id="add-category-btn">
-                        <i class="fas fa-plus"></i> إضافة فئة
-                    </button>
-                </div>
-                
-                <div class="table-container">
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>اسم الفئة</th>
-                                <th>الوصف</th>
-                                <th>الصورة</th>
-                                <th>عدد الخدمات</th>
-                                <th>الإجراءات</th>
-                            </tr>
-                        </thead>
-                        <tbody id="categories-table-body">
-                            <!-- Categories table rows will be dynamically loaded here -->
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
             <!-- Providers Management Tab -->
             <section class="tab-content" id="providers-tab">
                 <div class="tab-header">
                     <h2>إدارة مقدمي الخدمات</h2>
-                    <button class="btn btn-primary" id="add-provider-btn">
-                        <i class="fas fa-plus"></i> إضافة مقدم خدمة
-                    </button>
+                    <button class="btn btn-primary" id="add-provider-btn"><i class="fas fa-plus"></i> إضافة مقدم خدمة</button>
                 </div>
                 
                 <div class="table-container">
@@ -145,10 +106,10 @@
                         <thead>
                             <tr>
                                 <th>الاسم</th>
+                                <th>الخدمة</th>
                                 <th>الهاتف</th>
                                 <th>العنوان</th>
-                                <th>الصورة</th>
-                                <th>الخدمات</th>
+                                <th>الفئة</th>
                                 <th>الإجراءات</th>
                             </tr>
                         </thead>
@@ -163,9 +124,7 @@
             <section class="tab-content" id="services-tab">
                 <div class="tab-header">
                     <h2>إدارة الخدمات</h2>
-                    <button class="btn btn-primary" id="add-service-btn">
-                        <i class="fas fa-plus"></i> إضافة خدمة
-                    </button>
+                    <button class="btn btn-primary" id="add-service-btn"><i class="fas fa-plus"></i> إضافة خدمة</button>
                 </div>
                 
                 <div class="table-container">
@@ -174,7 +133,6 @@
                             <tr>
                                 <th>اسم الخدمة</th>
                                 <th>الفئة</th>
-                                <th>الصورة</th>
                                 <th>عدد مقدمي الخدمة</th>
                                 <th>الإجراءات</th>
                             </tr>
@@ -190,9 +148,7 @@
             <section class="tab-content" id="ads-tab">
                 <div class="tab-header">
                     <h2>إدارة الإعلانات</h2>
-                    <button class="btn btn-primary" id="add-ad-btn">
-                        <i class="fas fa-plus"></i> إضافة إعلان
-                    </button>
+                    <button class="btn btn-primary" id="add-ad-btn"><i class="fas fa-plus"></i> إضافة إعلان</button>
                 </div>
                 
                 <div class="table-container">
@@ -202,7 +158,6 @@
                                 <th>عنوان الإعلان</th>
                                 <th>الصورة</th>
                                 <th>الوصف</th>
-                                <th>الفئة</th>
                                 <th>تاريخ البدء</th>
                                 <th>تاريخ الانتهاء</th>
                                 <th>الإجراءات</th>
@@ -217,43 +172,6 @@
         </main>
     </div>
 
-    <!-- Category Modal -->
-    <div class="modal" id="category-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 id="category-modal-title">إضافة فئة</h3>
-                <span class="close-modal">&times;</span>
-            </div>
-            <form id="category-form" enctype="multipart/form-data">
-                <input type="hidden" id="category-id">
-                <div class="form-group">
-                    <label class="form-label" for="category-name">اسم الفئة</label>
-                    <input type="text" class="form-input" id="category-name" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="category-description">الوصف</label>
-                    <textarea class="form-input" id="category-description" rows="3" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="category-image">صورة الفئة</label>
-                    <input type="file" class="form-input" id="category-image" accept="image/png,image/jpeg,image/jpg" required>
-                    <small>الصيغ المسموحة: PNG, JPG, JPEG - الحد الأقصى: 2MB</small>
-                    <div id="category-image-preview" class="image-preview"></div>
-                </div>
-                <div class="form-actions">
-                    <button type="button" class="btn btn-secondary" id="cancel-category">إلغاء</button>
-                    <button type="submit" class="btn btn-primary" id="save-category-btn">
-                        <span class="btn-text">حفظ</span>
-                        <div class="btn-loading" style="display: none;">
-                            <div class="loading-spinner"></div>
-                            جاري الحفظ...
-                        </div>
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-
     <!-- Provider Modal -->
     <div class="modal" id="provider-modal">
         <div class="modal-content">
@@ -261,7 +179,7 @@
                 <h3 id="provider-modal-title">إضافة مقدم خدمة</h3>
                 <span class="close-modal">&times;</span>
             </div>
-            <form id="provider-form" enctype="multipart/form-data">
+            <form id="provider-form">
                 <input type="hidden" id="provider-id">
                 <div class="form-row">
                     <div class="form-group">
@@ -269,9 +187,23 @@
                         <input type="text" class="form-input" id="provider-name" required>
                     </div>
                     <div class="form-group">
+                        <label class="form-label" for="provider-service">الخدمة</label>
+                        <input type="text" class="form-input" id="provider-service" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
                         <label class="form-label" for="provider-phone">الهاتف</label>
-                        <input type="tel" class="form-input" id="provider-phone" placeholder="xxxxxxxx" required>
-                        <small>يجب أن يتكون من 9 أرقام</small>
+                        <input type="tel" class="form-input" id="provider-phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="provider-category">الفئة</label>
+                        <select class="form-input" id="provider-category" required>
+                            <option value="home">خدمات المنازل</option>
+                            <option value="beauty">التجميل</option>
+                            <option value="education">التعليم</option>
+                            <option value="car">خدمات السيارات</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group">
@@ -279,29 +211,12 @@
                     <input type="text" class="form-input" id="provider-address" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label" for="provider-image">الصورة الشخصية</label>
-                    <input type="file" class="form-input" id="provider-image" accept="image/png,image/jpeg,image/jpg">
-                    <small>الصيغ المسموحة: PNG, JPG, JPEG - الحد الأقصى: 2MB</small>
-                    <div id="provider-image-preview" class="image-preview"></div>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">الخدمات المقدمة</label>
-                    <div id="provider-services-container">
-                        <!-- Dynamic services will be added here -->
-                    </div>
-                    <button type="button" class="btn btn-secondary btn-sm" id="add-service-field">
-                        <i class="fas fa-plus"></i> إضافة خدمة
-                    </button>
+                    <label class="form-label" for="provider-description">الوصف</label>
+                    <textarea class="form-input" id="provider-description" rows="3" required></textarea>
                 </div>
                 <div class="form-actions">
                     <button type="button" class="btn btn-secondary" id="cancel-provider">إلغاء</button>
-                    <button type="submit" class="btn btn-primary" id="save-provider-btn">
-                        <span class="btn-text">حفظ</span>
-                        <div class="btn-loading" style="display: none;">
-                            <div class="loading-spinner"></div>
-                            جاري الحفظ...
-                        </div>
-                    </button>
+                    <button type="submit" class="btn btn-primary">حفظ</button>
                 </div>
             </form>
         </div>
@@ -314,7 +229,7 @@
                 <h3 id="service-modal-title">إضافة خدمة</h3>
                 <span class="close-modal">&times;</span>
             </div>
-            <form id="service-form" enctype="multipart/form-data">
+            <form id="service-form">
                 <input type="hidden" id="service-id">
                 <div class="form-row">
                     <div class="form-group">
@@ -324,25 +239,16 @@
                     <div class="form-group">
                         <label class="form-label" for="service-category">الفئة</label>
                         <select class="form-input" id="service-category" required>
-                            <option value="">اختر الفئة</option>
+                            <option value="home">خدمات المنازل</option>
+                            <option value="beauty">التجميل</option>
+                            <option value="education">التعليم</option>
+                            <option value="car">خدمات السيارات</option>
                         </select>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="form-label" for="service-image">صورة الخدمة</label>
-                    <input type="file" class="form-input" id="service-image" accept="image/png,image/jpeg,image/jpg" required>
-                    <small>الصيغ المسموحة: PNG, JPG, JPEG - الحد الأقصى: 2MB</small>
-                    <div id="service-image-preview" class="image-preview"></div>
-                </div>
                 <div class="form-actions">
                     <button type="button" class="btn btn-secondary" id="cancel-service">إلغاء</button>
-                    <button type="submit" class="btn btn-primary" id="save-service-btn">
-                        <span class="btn-text">حفظ</span>
-                        <div class="btn-loading" style="display: none;">
-                            <div class="loading-spinner"></div>
-                            جاري الحفظ...
-                        </div>
-                    </button>
+                    <button type="submit" class="btn btn-primary">حفظ</button>
                 </div>
             </form>
         </div>
@@ -355,27 +261,19 @@
                 <h3 id="ad-modal-title">إضافة إعلان</h3>
                 <span class="close-modal">&times;</span>
             </div>
-            <form id="ad-form" enctype="multipart/form-data">
+            <form id="ad-form">
                 <input type="hidden" id="ad-id">
                 <div class="form-group">
                     <label class="form-label" for="ad-title">عنوان الإعلان</label>
                     <input type="text" class="form-input" id="ad-title" required>
                 </div>
                 <div class="form-group">
+                    <label class="form-label" for="ad-image">رابط الصورة</label>
+                    <input type="url" class="form-input" id="ad-image" required>
+                </div>
+                <div class="form-group">
                     <label class="form-label" for="ad-description">وصف الإعلان</label>
                     <textarea class="form-input" id="ad-description" rows="3" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="ad-category">الفئة</label>
-                    <select class="form-input" id="ad-category" required>
-                        <option value="">اختر الفئة</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="ad-image">صورة الإعلان</label>
-                    <input type="file" class="form-input" id="ad-image" accept="image/png,image/jpeg,image/jpg" required>
-                    <small>الصيغ المسموحة: PNG, JPG, JPEG - الحد الأقصى: 2MB</small>
-                    <div id="ad-image-preview" class="image-preview"></div>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
@@ -389,46 +287,9 @@
                 </div>
                 <div class="form-actions">
                     <button type="button" class="btn btn-secondary" id="cancel-ad">إلغاء</button>
-                    <button type="submit" class="btn btn-primary" id="save-ad-btn">
-                        <span class="btn-text">حفظ</span>
-                        <div class="btn-loading" style="display: none;">
-                            <div class="loading-spinner"></div>
-                            جاري الحفظ...
-                        </div>
-                    </button>
+                    <button type="submit" class="btn btn-primary">حفظ</button>
                 </div>
             </form>
-        </div>
-    </div>
-
-    <!-- Custom Dialog -->
-    <div class="dialog" id="custom-dialog">
-        <div class="dialog-content">
-            <div class="dialog-header">
-                <h3 id="dialog-title">العنوان</h3>
-            </div>
-            <div class="dialog-body">
-                <p id="dialog-message">الرسالة</p>
-            </div>
-            <div class="dialog-footer">
-                <button class="btn btn-primary" id="dialog-confirm-btn">موافق</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Confirmation Dialog -->
-    <div class="dialog" id="confirmation-dialog">
-        <div class="dialog-content">
-            <div class="dialog-header">
-                <h3 id="confirmation-title">تأكيد</h3>
-            </div>
-            <div class="dialog-body">
-                <p id="confirmation-message">هل أنت متأكد من هذا الإجراء؟</p>
-            </div>
-            <div class="dialog-footer">
-                <button class="btn btn-secondary" id="confirmation-cancel-btn">إلغاء</button>
-                <button class="btn btn-primary" id="confirmation-confirm-btn">تأكيد</button>
-            </div>
         </div>
     </div>
 

@@ -1,220 +1,7 @@
-// Sample data for services with icons
-const services = [
-    {
-        id: 1,
-        name: "كهرباء منازل",
-        description: "خدمات الكهرباء المنزلية المتكاملة من تركيب وصيانة وإصلاح",
-        icon: "fas fa-bolt",
-        category: "home",
-        providersCount: 15
-    },
-    {
-        id: 2,
-        name: "سباكة منازل",
-        description: "حلول السباكة المنزلية بإشراف فنيين محترفين ومواد عالية الجودة",
-        icon: "fas fa-faucet",
-        category: "home",
-        providersCount: 12
-    },
-    {
-        id: 3,
-        name: "دهان وديكور",
-        description: "خدمات الدهان والديكور بأحدث التقنيات وأجود أنواع المواد",
-        icon: "fas fa-paint-roller",
-        category: "home",
-        providersCount: 8
-    },
-    {
-        id: 4,
-        name: "تجميل سيدات",
-        description: "خدمات التجميل المتكاملة للسيدات بأيدي محترفات ومواد آمنة",
-        icon: "fas fa-spa",
-        category: "beauty",
-        providersCount: 20
-    },
-    {
-        id: 5,
-        name: "تصفيف شعر",
-        description: "أحدث صيحات تصفيف وتنسيق الشعر لجميع المناسبات",
-        icon: "fas fa-cut",
-        category: "beauty",
-        providersCount: 18
-    },
-    {
-        id: 6,
-        name: "تدريس خصوصي",
-        description: "دروس خصوصية لجميع المراحل الدراسية والمواد التعليمية",
-        icon: "fas fa-graduation-cap",
-        category: "education",
-        providersCount: 25
-    },
-    {
-        id: 7,
-        name: "تدريس لغة إنجليزية",
-        description: "تعليم اللغة الإنجليزية لجميع المستويات والأعمار",
-        icon: "fas fa-language",
-        category: "education",
-        providersCount: 10
-    },
-    {
-        id: 8,
-        name: "ميكانيكا سيارات",
-        description: "صيانة وإصلاح السيارات بأسعار منافسة وقطع غيار أصلية",
-        icon: "fas fa-car",
-        category: "car",
-        providersCount: 14
-    },
-    {
-        id: 9,
-        name: "نقل عفش",
-        description: "خدمات نقل العفش والتغليف المحترف بأسعار مناسبة",
-        icon: "fas fa-truck-moving",
-        category: "home",
-        providersCount: 7
-    },
-    {
-        id: 10,
-        name: "تنظيف منازل",
-        description: "خدمات تنظيف المنازل والشقق باستخدام أحدث المعدات",
-        icon: "fas fa-broom",
-        category: "home",
-        providersCount: 16
-    }
-];
-
-// Sample data for service providers
-const providers = [
-    {
-        id: 1,
-        name: "أحمد محمد",
-        address: "الرياض، حي العليا",
-        phone: "+966501234567",
-        service: "كهرباء منازل",
-        category: "home",
-        description: "متخصص في أعمال الكهرباء المنزلية، تركيب وصيانة جميع أنواع التركيبات الكهربائية. خبرة أكثر من 10 سنوات في المجال."
-    },
-        {
-        id: 1,
-        name: "سالم محمد",
-        address: "المكلاء حي العليا",
-        phone: "+966501234567",
-        service: "كهرباء منازل",
-        category: "home",
-        description: "متخصص في أعمال الكهرباء المنزلية، تركيب وصيانة جميع أنواع التركيبات الكهربائية. خبرة أكثر من 10 سنوات في المجال."
-    },
-    {
-        id: 2,
-        name: "فاطمة علي",
-        address: "جدة، حي الصفا",
-        phone: "+966502345678",
-        service: "تجميل سيدات",
-        category: "beauty",
-        description: "تقديم خدمات التجميل للسيدات في المنزل، مكياج، عناية بالبشرة، وعناية بالأظافر. استخدام منتجات طبيعية وآمنة."
-    },
-    {
-        id: 3,
-        name: "خالد إبراهيم",
-        address: "الدمام، حي الشاطئ",
-        phone: "+966503456789",
-        service: "تدريس خصوصي",
-        category: "education",
-        description: "معلم خصوصي لجميع المواد الدراسية، ابتدائي ومتوسط، خبرة 5 سنوات في التدريس. أساليب تعليمية مبتكرة."
-    },
-    {
-        id: 4,
-        name: "محمد عبدالله",
-        address: "الرياض، حي النخيل",
-        phone: "+966504567890",
-        service: "سباكة منازل",
-        category: "home",
-        description: "فني سباكة محترف، إصلاح تسربات المياه، تركيب وصيانة جميع أنواع السباكة. استخدام مواد عالية الجودة."
-    },
-    {
-        id: 5,
-        name: "سارة أحمد",
-        address: "مكة، حي العزيزية",
-        phone: "+966505678901",
-        service: "تصفيف شعر",
-        category: "beauty",
-        description: "تصفيف وتنسيق الشعر لجميع المناسبات، قص، صبغ، وتصفيف حسب الطلب. أحدث صيحات الموضة."
-    },
-    {
-        id: 6,
-        name: "يوسف سعيد",
-        address: "الرياض، حي الملز",
-        phone: "+966506789012",
-        service: "ميكانيكا سيارات",
-        category: "car",
-        description: "ميكانيكي سيارات متخصص، صيانة دورية، إصلاح أعطال المحرك، وكهرباء السيارات. ضمان على العمل."
-    },
-    {
-        id: 7,
-        name: "نورة خالد",
-        address: "جدة، حي الروضة",
-        phone: "+966507890123",
-        service: "تدريس لغة إنجليزية",
-        category: "education",
-        description: "معلمة لغة إنجليزية، تدريس جميع المستويات، تحضير لاختبارات التوفل والآيلتس. منهجية تعليم تفاعلية."
-    },
-    {
-        id: 8,
-        name: "عبدالرحمن حسن",
-        address: "الدمام، حي الفيصلية",
-        phone: "+966508901234",
-        service: "دهان وديكور",
-        category: "home",
-        description: "فني دهان وديكور، استخدام أحدث التقنيات في أعمال الدهان والديكور الداخلي. تنسيق ألوان احترافي."
-    },
-    {
-        id: 9,
-        name: "ريماس القحطاني",
-        address: "الرياض، حي الورود",
-        phone: "+966509012345",
-        service: "تنظيف منازل",
-        category: "home",
-        description: "خدمات تنظيف المنازل والشقق باستخدام معدات متطورة ومنتجات صديقة للبيئة. فريق عمل مدرب."
-    },
-    {
-        id: 10,
-        name: "فيصل الحربي",
-        address: "جدة، حي الزهراء",
-        phone: "+966510123456",
-        service: "نقل عفش",
-        category: "home",
-        description: "خدمات نقل العفش والتغليف المحترف. فريق مدرب وعربات مجهزة. أسعار مناسبة وضمان على الأثاث."
-    }
-];
-
-// Sample data for ads
-const ads = [
-    {
-        id: 1,
-        title: "خصم 20% على خدمات الكهرباء",
-        image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-        description: "احصل على خصم 20% على جميع خدمات الكهرباء المنزلية حتى نهاية الشهر",
-        startDate: "2023-10-01",
-        endDate: "2023-10-31"
-    },
-    {
-        id: 2,
-        title: "عرض خاص للعناية بالبشرة",
-        image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-        description: "جلسات عناية بالبشرة بأسعار مخفضة لفترة محدودة",
-        startDate: "2023-10-05",
-        endDate: "2023-10-25"
-    },
-    {
-        id: 3,
-        title: "دورات تدريسية مكثفة",
-        image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-        description: "دورات تدريسية مكثفة لجميع المراحل الدراسية بأسعار تنافسية",
-        startDate: "2023-10-10",
-        endDate: "2023-11-10"
-    }
-];
+// API Configuration
+const API_BASE_URL = 'https://paleturquoise-tarsier-726492.hostingersite.com/api';
 
 // DOM Elements
-
 const hideTitle = document.getElementById('hide-title');
 const searchServices = document.getElementById('search-services');
 const servicesContainer = document.getElementById('services-container');
@@ -222,6 +9,10 @@ const providersContainer = document.getElementById('providers-container');
 const providersSection = document.getElementById('providers-section');
 const servicesSearch = document.getElementById('services-search');
 const providersSearch = document.getElementById('providers-search');
+const loginLink = document.getElementById('login-link');
+const loginModal = document.getElementById('login-modal');
+const closeModal = document.querySelector('.close-modal');
+const loginForm = document.getElementById('login-form');
 const backToServices = document.getElementById('back-to-services');
 const selectedServiceTitle = document.getElementById('selected-service-title');
 const pagination = document.getElementById('pagination');
@@ -229,20 +20,305 @@ const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 const scrollTopBtn = document.getElementById('scroll-top');
 const adsContainer = document.getElementById('ads-container');
+const categoriesContainer = document.getElementById('categories-container');
+const categoriesSection = document.getElementById('categories');
 
-// Pagination variables
+
+// Global variables
+let services = [];
+let providers = [];
+let ads = [];
+let categories = [];
 let currentPage = 1;
 const providersPerPage = 6;
 let currentProviders = [];
 let currentService = null;
+let filteredServices = [];
+
+// Default images
+const DEFAULT_CATEGORY_IMAGE = 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';
+const DEFAULT_SERVICE_IMAGE = 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';
+const DEFAULT_PROVIDER_IMAGE = 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';
+
+// API Service Class
+class ApiService {
+    constructor() {
+        this.baseURL = API_BASE_URL;
+        this.token = localStorage.getItem('authToken');
+    }
+
+    async request(endpoint, options = {}) {
+        const url = `${this.baseURL}${endpoint}`;
+        
+        // Handle FormData vs JSON
+        const isFormData = options.body instanceof FormData;
+        
+        const config = {
+            headers: {
+                'Accept': 'application/json',
+                ...options.headers
+            },
+            ...options
+        };
+
+        // Don't set Content-Type for FormData
+        if (!isFormData) {
+            config.headers['Content-Type'] = 'application/json';
+        }
+
+        // Add authorization header if token exists
+        if (this.token && !endpoint.includes('/login')) {
+            config.headers['Authorization'] = `Bearer ${this.token}`;
+        }
+
+        try {
+            const response = await fetch(url, config);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            
+            // Check for API error status
+            if (data.status === 'error') {
+                throw new Error(data.message || 'API error');
+            }
+            
+            return data;
+        } catch (error) {
+            console.error('API Request failed:', error);
+            throw error;
+        }
+    }
+
+            // Auth methods
+            async login(phone, password) {
+                const data = await this.request('/login', {
+                    method: 'POST',
+                    body: JSON.stringify({ phone, password })
+                });
+                
+                // لو تم تسجيل الدخول بنجاح
+                if (data.status === "success" && data.data) {
+                    this.token = data.data;
+                    localStorage.setItem('authToken', data.data);
+                    localStorage.setItem('user', JSON.stringify('admin'));
+
+                    // 👈 Redirect here
+                    window.location.href = "dashboard.html";
+                } else {
+                    alert(data.message || "خطأ في تسجيل الدخول");
+                }
+
+                return data;
+            }
+
+
+    logout() {
+        this.token = null;
+        localStorage.removeItem('authToken');
+        localStorage.removeItem('user');
+    }
+
+    // Public API methods
+    async getOffers() {
+        const data = await this.request('/offers');
+        return data.data || [];
+    }
+
+    async getCategories() {
+        const data = await this.request('/categories');
+        return data.data || [];
+    }
+
+    async getServices() {
+        const data = await this.request('/services');
+        return data.data || [];
+    }
+}
+
+// Initialize API service
+const apiService = new ApiService();
+
+// Check authentication status
+function checkAuth() {
+    const token = localStorage.getItem('authToken');
+    if (token) {
+        // User is logged in
+        loginLink.textContent = 'لوحة التحكم';
+        loginLink.href = 'dashboard.html';
+    } else {
+        // User is not logged in
+        loginLink.textContent = 'تسجيل الدخول';
+        loginLink.href = '#';
+    }
+}
 
 // Initialize the page
-document.addEventListener('DOMContentLoaded', function() {
-    displayServices(services);
-    displayAds(ads);
+document.addEventListener('DOMContentLoaded', async function() {
+    await loadData();
     setupEventListeners();
     trackVisitor();
+    checkAuth();
 });
+
+// Load data from API
+async function loadData() {
+    try {
+        showLoading();
+        
+        // Load categories, services, and offers in parallel
+        const [categoriesData, servicesData, offersData] = await Promise.all([
+            apiService.getCategories(),
+            apiService.getServices(),
+            apiService.getOffers()
+        ]);
+
+        // Transform API data to match your existing structure
+        categories = transformCategoriesData(categoriesData);
+        services = transformServicesData(servicesData);
+        ads = transformOffersData(offersData);
+        
+        // Extract providers from categories data (users in services)
+        providers = extractProvidersFromCategories(categoriesData);
+        
+        // Set filtered services to all services initially
+        filteredServices = [...services];
+        
+        console.log('Loaded data:', { categories, services, providers, ads });
+
+        displayCategories(categories);
+        displayServices(filteredServices);
+        displayAds(ads);
+        
+    } catch (error) {
+        console.error('Error loading data:', error);
+        showDialog('خطأ', 'حدث خطأ في تحميل البيانات. يرجى المحاولة مرة أخرى.');
+        
+        // Fallback to sample data if API fails
+        loadSampleData();
+    } finally {
+        hideLoading();
+    }
+}
+
+// Transform categories data
+function transformCategoriesData(apiData) {
+    return apiData.map(category => ({
+        id: category.id,
+        name: category.name,
+        description: category.description,
+        image: category.image || DEFAULT_CATEGORY_IMAGE,
+        services_count: category.services ? category.services.length : 0
+    }));
+}
+
+// Extract providers from categories data
+function extractProvidersFromCategories(categoriesData) {
+    const providers = [];
+    
+    categoriesData.forEach(category => {
+        if (category.services && Array.isArray(category.services)) {
+            category.services.forEach(service => {
+                if (service.users && Array.isArray(service.users)) {
+                    service.users.forEach(user => {
+                        providers.push({
+                            id: user.id,
+                            name: user.name,
+                            address: user.address,
+                            phone: user.phone,
+                            service: service.name,
+                            category: category.name,
+                            description: user.services_details && user.services_details.length > 0 
+                                ? user.services_details[0].pivot.details 
+                                : 'لا يوجد وصف',
+                            image: user.image || DEFAULT_PROVIDER_IMAGE
+                        });
+                    });
+                }
+            });
+        }
+    });
+    
+    return providers;
+}
+
+// Data transformation functions
+function transformServicesData(apiData) {
+    return apiData.map(service => ({
+        id: service.id,
+        name: service.name,
+        description: service.description || `خدمة ${service.name}`,
+        category: service.category ? service.category.name : 'عام',
+        category_id: service.category ? service.category.id : null,
+        providersCount: service.users_count || 0,
+        image: service.image || DEFAULT_SERVICE_IMAGE
+    }));
+}
+
+function transformOffersData(apiData) {
+    return apiData.map(offer => ({
+        id: offer.id,
+        title: offer.name,
+        image: offer.image || 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+        description: offer.details,
+        startDate: offer.start_date,
+        endDate: offer.end_date,
+        duration: offer.duration,
+        remainingDays: offer.remaining_days
+    }));
+}
+
+// Display categories
+function displayCategories(categoriesToShow) {
+    categoriesContainer.innerHTML = '';
+    
+    if (categoriesToShow.length === 0) {
+        categoriesContainer.innerHTML = '<p style="text-align: center; grid-column: 1/-1;">لا توجد فئات متاحة</p>';
+        return;
+    }
+    
+    categoriesToShow.forEach(category => {
+        const card = document.createElement('div');
+        card.className = 'service-card';
+        card.setAttribute('data-category', category.id);
+        
+        card.innerHTML = `
+            <div class="service-image">
+                <img src="${category.image}" alt="${category.name}" onerror="this.src='${DEFAULT_CATEGORY_IMAGE}'">
+            </div>
+            <h3>${category.name}</h3>
+            <p>${category.description}</p>
+            <div class="service-meta">
+                <span class="providers-count">${category.services_count} خدمة</span>
+            </div>
+        `;
+        
+        card.addEventListener('click', () => filterServicesByCategory(category));
+        categoriesContainer.appendChild(card);
+    });
+}
+
+// Filter services by category
+function filterServicesByCategory(category) {
+    if (category.id === 'all') {
+        filteredServices = [...services];
+        selectedServiceTitle.textContent = 'جميع الخدمات';
+    } else {
+        filteredServices = services.filter(service => service.category_id === category.id);
+        selectedServiceTitle.textContent = `خدمات ${category.name}`;
+    }
+    
+    // Show services section and hide categories
+    document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
+    servicesContainer.style.display = 'grid';
+    providersSection.style.display = 'none';
+    hideTitle.style.display = 'none';
+    searchServices.style.display = 'block';
+    
+    displayServices(filteredServices);
+}
 
 // Display services in the container
 function displayServices(servicesToShow) {
@@ -256,14 +332,17 @@ function displayServices(servicesToShow) {
     servicesToShow.forEach(service => {
         const card = document.createElement('div');
         card.className = 'service-card';
-        card.setAttribute('data-category', service.category);
+        card.setAttribute('data-category', service.category_id);
         
         card.innerHTML = `
-            <div class="service-icon">
-                <i class="${service.icon}"></i>
+            <div class="service-image">
+                <img src="${service.image}" alt="${service.name}" onerror="this.src='${DEFAULT_SERVICE_IMAGE}'">
             </div>
             <h3>${service.name}</h3>
             <p>${service.description}</p>
+            <div class="service-meta">
+                <span class="providers-count">${service.providersCount} مقدم خدمة</span>
+            </div>
         `;
         
         card.addEventListener('click', () => showProvidersForService(service));
@@ -293,6 +372,9 @@ function displayProviders(providersToShow, page = 1) {
         card.className = 'provider-card';
         
         card.innerHTML = `
+            <div class="provider-image">
+                <img src="${provider.image}" alt="${provider.name}" onerror="this.src='${DEFAULT_PROVIDER_IMAGE}'">
+            </div>
             <div class="card-header">
                 <h3>${provider.name}</h3>
                 <p>${provider.service}</p>
@@ -369,6 +451,8 @@ function showProvidersForService(service) {
     // Update UI
     document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
     servicesContainer.style.display = 'none';
+    categoriesContainer.style.display = 'none';
+    categoriesSection.style.display = 'none'  
     providersSection.style.display = 'block';
     hideTitle.style.display = 'none';
     searchServices.style.display = 'none';
@@ -384,10 +468,12 @@ function showProvidersForService(service) {
 function backToServicesHandler() {
     servicesContainer.style.display = 'grid';
     providersSection.style.display = 'none';
+    categoriesContainer.style.display = 'grid'
+    categoriesSection.style.display = 'block'  
     searchServices.style.display = 'block';
     hideTitle.style.display = 'block';
     servicesSearch.value = '';
-    displayServices(services);
+    displayServices(filteredServices);
 }
 
 // Setup event listeners
@@ -395,11 +481,11 @@ function setupEventListeners() {
     // Services search
     servicesSearch.addEventListener('input', function() {
         const searchTerm = this.value.toLowerCase();
-        const filteredServices = services.filter(service => 
+        const filtered = filteredServices.filter(service => 
             service.name.toLowerCase().includes(searchTerm) ||
             service.description.toLowerCase().includes(searchTerm)
         );
-        displayServices(filteredServices);
+        displayServices(filtered);
     });
     
     // Providers search
@@ -450,6 +536,72 @@ function setupEventListeners() {
             behavior: 'smooth'
         });
     });
+    
+    // Login modal
+    loginLink.addEventListener('click', function(e) {
+        const token = localStorage.getItem('authToken');
+        if (!token) {
+            e.preventDefault();
+            loginModal.style.display = 'flex';
+        }
+    });
+    
+    closeModal.addEventListener('click', function() {
+        loginModal.style.display = 'none';
+    });
+    
+    // Close modal when clicking outside
+    window.addEventListener('click', function(e) {
+        if (e.target === loginModal) {
+            loginModal.style.display = 'none';
+        }
+    });
+    
+    // Login form submission
+    loginForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const phone = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        
+        if (!phone || !password) {
+            showDialog('خطأ', 'يرجى إدخال رقم الهاتف وكلمة المرور');
+            return;
+        }
+        
+        const submitBtn = document.getElementById('login-submit-btn');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const btnLoading = submitBtn.querySelector('.btn-loading');
+        
+        try {
+            // Show loading state
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'flex';
+            submitBtn.disabled = true;
+            
+            const result = await apiService.login(phone, password);
+            
+            if (result.token) {
+                loginModal.style.display = 'none';
+                showDialog('نجاح', 'تم تسجيل الدخول بنجاح!');
+                checkAuth();
+                
+                // Redirect to dashboard after successful login
+                setTimeout(() => {
+                    window.location.href = 'dashboard.html';
+                }, 1000);
+            } else {
+                showDialog('خطأ', 'فشل تسجيل الدخول. يرجى التحقق من البيانات المدخلة.');
+            }
+        } catch (error) {
+            console.error('Login error:', error);
+            showDialog('خطأ', 'حدث خطأ أثناء تسجيل الدخول. يرجى المحاولة مرة أخرى.');
+        } finally {
+            // Hide loading state
+            btnText.style.display = 'block';
+            btnLoading.style.display = 'none';
+            submitBtn.disabled = false;
+        }
+    });
 }
 
 // Display ads in the container
@@ -461,11 +613,12 @@ function displayAds(adsToShow) {
         card.className = 'ad-card';
         
         card.innerHTML = `
-            <img src="${ad.image}" alt="${ad.title}" class="ad-image">
+            <img src="${ad.image}" alt="${ad.title}" class="ad-image" onerror="this.src='https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
             <div class="ad-content">
                 <h3 class="ad-title">${ad.title}</h3>
                 <p class="ad-description">${ad.description}</p>
                 <p><small>من ${ad.startDate} إلى ${ad.endDate}</small></p>
+                ${ad.remainingDays !== undefined ? `<p><small>متبقي: ${ad.remainingDays} يوم</small></p>` : ''}
             </div>
         `;
         
@@ -473,45 +626,174 @@ function displayAds(adsToShow) {
     });
 }
 
-// Copy phone number to clipboard
+// Utility functions
 function copyNumber(number) {
     navigator.clipboard.writeText(number)
         .then(() => {
-            showAlert(`تم نسخ الرقم: ${number}`);
+            showDialog('نجاح', `تم نسخ الرقم: ${number}`);
         })
         .catch(err => {
             console.error('Failed to copy: ', err);
-            showAlert('فشل في نسخ الرقم، يرجى المحاولة مرة أخرى');
+            showDialog('خطأ', 'فشل في نسخ الرقم، يرجى المحاولة مرة أخرى');
         });
 }
 
-// Open WhatsApp with pre-filled message
 function contactWhatsApp(number) {
     const message = encodeURIComponent("مرحباً! أرغب في الاستفسار عن الخدمة التي تقدمها.");
     window.open(`https://wa.me/${number}?text=${message}`, '_blank');
 }
 
-// Show alert message
-function showAlert(message) {
-    // Remove existing alert if any
-    const existingAlert = document.querySelector('.alert');
-    if (existingAlert) {
-        existingAlert.remove();
-    }
+// Dialog functions
+function showDialog(title, message) {
+    const dialog = document.getElementById('custom-dialog');
+    const dialogTitle = document.getElementById('dialog-title');
+    const dialogMessage = document.getElementById('dialog-message');
     
-    // Create new alert
-    const alert = document.createElement('div');
-    alert.className = 'alert';
-    alert.textContent = message;
-    document.body.appendChild(alert);
+    dialogTitle.textContent = title;
+    dialogMessage.innerHTML = message;
+    dialog.style.display = 'flex';
     
-    // Remove alert after 3 seconds
-    setTimeout(() => {
-        alert.remove();
-    }, 3000);
+    // Add event listener to confirm button
+    const confirmBtn = document.getElementById('dialog-confirm-btn');
+    confirmBtn.onclick = function() {
+        dialog.style.display = 'none';
+    };
 }
 
-// Track visitor count
+function showConfirmationDialog(title, message, onConfirm) {
+    const dialog = document.getElementById('confirmation-dialog');
+    const dialogTitle = document.getElementById('confirmation-title');
+    const dialogMessage = document.getElementById('confirmation-message');
+    
+    dialogTitle.textContent = title;
+    dialogMessage.textContent = message;
+    dialog.style.display = 'flex';
+    
+    // Add event listeners
+    const confirmBtn = document.getElementById('confirmation-confirm-btn');
+    const cancelBtn = document.getElementById('confirmation-cancel-btn');
+    
+    const closeDialog = function() {
+        dialog.style.display = 'none';
+        confirmBtn.onclick = null;
+        cancelBtn.onclick = null;
+    };
+    
+    confirmBtn.onclick = function() {
+        closeDialog();
+        if (onConfirm) onConfirm();
+    };
+    
+    cancelBtn.onclick = closeDialog;
+}
+
+// Loading functions
+function showLoading() {
+    let loadingOverlay = document.getElementById('loading-overlay');
+    if (!loadingOverlay) {
+        loadingOverlay = document.createElement('div');
+        loadingOverlay.id = 'loading-overlay';
+        loadingOverlay.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            color: white;
+            font-size: 18px;
+        `;
+        loadingOverlay.innerHTML = `
+            <div style="text-align: center;">
+                <div class="loading-spinner" style="width: 40px; height: 40px; border: 4px solid #f3f3f3; border-top: 4px solid #007B83; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 10px;"></div>
+                جاري التحميل...
+            </div>
+        `;
+        document.body.appendChild(loadingOverlay);
+    }
+    loadingOverlay.style.display = 'flex';
+}
+
+function hideLoading() {
+    const loadingOverlay = document.getElementById('loading-overlay');
+    if (loadingOverlay) {
+        loadingOverlay.style.display = 'none';
+    }
+}
+
+function setButtonLoading(button, isLoading) {
+    const btnText = button.querySelector('.btn-text');
+    const btnLoading = button.querySelector('.btn-loading');
+    
+    if (isLoading) {
+        btnText.style.display = 'none';
+        btnLoading.style.display = 'flex';
+        button.disabled = true;
+    } else {
+        btnText.style.display = 'block';
+        btnLoading.style.display = 'none';
+        button.disabled = false;
+    }
+}
+
+// Fallback to sample data if API fails
+function loadSampleData() {
+    categories = [
+        {
+            id: 1,
+            name: "خدمات المنازل",
+            description: "جميع خدمات الصيانة والتحسين للمنازل",
+            image: DEFAULT_CATEGORY_IMAGE,
+            services_count: 5
+        }
+    ];
+    
+    services = [
+        {
+            id: 1,
+            name: "كهرباء منازل",
+            description: "خدمات الكهرباء المنزلية المتكاملة من تركيب وصيانة وإصلاح",
+            category: "خدمات المنازل",
+            category_id: 1,
+            providersCount: 15,
+            image: DEFAULT_SERVICE_IMAGE
+        }
+    ];
+    
+    providers = [
+        {
+            id: 1,
+            name: "أحمد محمد",
+            address: "الرياض، حي العليا",
+            phone: "+966501234567",
+            service: "كهرباء منازل",
+            category: "خدمات المنازل",
+            description: "متخصص في أعمال الكهرباء المنزلية، تركيب وصيانة جميع أنواع التركيبات الكهربائية. خبرة أكثر من 10 سنوات في المجال.",
+            image: DEFAULT_PROVIDER_IMAGE
+        }
+    ];
+    
+    ads = [
+        {
+            id: 1,
+            title: "خصم 20% على خدمات الكهرباء",
+            image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            description: "احصل على خصم 20% على جميع خدمات الكهرباء المنزلية حتى نهاية الشهر",
+            startDate: "2023-10-01",
+            endDate: "2023-10-31"
+        }
+    ];
+    
+    filteredServices = [...services];
+    displayCategories(categories);
+    displayServices(filteredServices);
+    displayAds(ads);
+}
+
 function trackVisitor() {
     let visitors = localStorage.getItem('websiteVisitors');
     if (!visitors) {
@@ -522,9 +804,27 @@ function trackVisitor() {
     localStorage.setItem('websiteVisitors', visitors);
 }
 
-// Scroll to services section
+function scrollToCategories() {
+    document.getElementById('categories').scrollIntoView({ 
+        behavior: 'smooth' 
+    });
+}
+
 function scrollToServices() {
     document.getElementById('services').scrollIntoView({ 
         behavior: 'smooth' 
     });
 }
+
+// Initialize dialogs
+document.addEventListener('DOMContentLoaded', function() {
+    // Close dialogs when clicking outside
+    const dialogs = document.querySelectorAll('.dialog');
+    dialogs.forEach(dialog => {
+        dialog.addEventListener('click', function(e) {
+            if (e.target === dialog) {
+                dialog.style.display = 'none';
+            }
+        });
+    });
+});
